@@ -8,6 +8,7 @@ namespace PollDemo.Models
 {
     public class TeamDataAccessLayer
     {
+        int i = 10;
         myTestDBContext db = new myTestDBContext();
 
         public IEnumerable<Ipl> GetAllTeams()
