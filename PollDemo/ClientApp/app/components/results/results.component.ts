@@ -17,6 +17,7 @@ export class ResultExp {
     public resultList: TeamData[];
     public totalVotes: number;
     public isvoted: boolean = false;
+    public x: number;
 
     constructor(public http: Http, private _teamService: TeamService) {
 
