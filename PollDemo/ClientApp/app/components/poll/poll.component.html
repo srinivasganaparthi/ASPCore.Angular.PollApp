@@ -1,0 +1,22 @@
+﻿<h1>Team Data</h1>
+
+<p>This component demonstrates fetching Team data from the server.</p>
+
+<p *ngIf="!teamList"><em>Loading...</em></p>
+
+<table class='table' *ngIf="teamList">
+
+    <thead>
+        <tr>
+            <th>Team Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let team of teamList">
+            <td>{{ team.teamName }}</td>
+            <td>
+                <button (click)="save(team)" class="btn btn-primary"> Vote <i class="glyphicon glyphicon-thumbs-up"></i></button>
+            </td>
+        </tr>
+    </tbody>
+</table>

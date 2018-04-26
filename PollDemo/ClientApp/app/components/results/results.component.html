@@ -1,0 +1,28 @@
+﻿<h1>Voting Results</h1>
+
+<p>Here is the voting result.</p>
+
+<p *ngIf="!resultList"><em>Loading...</em></p>
+<p>Total votes : {{totalVotes}}</p>
+
+<table class='table' *ngIf="resultList">
+    <thead>
+        <tr>
+            <th>Team Name</th>
+            <th>Votes</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let team of resultList">
+            <td>{{ team.teamName }}</td>
+            <td>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" [style.width]="team.voteShare + '%'">
+                        {{team.teamName}} {{team.voteShare.toFixed(2)}} %
+                    </div>
+                </div>
+            </td>
+
+        </tr>
+    </tbody>
+</table>
